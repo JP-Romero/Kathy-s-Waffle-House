@@ -57,15 +57,14 @@ const PRODUCTOS = [
     id:          3,
     categoria:   "Waffles",
     nombre:      "Waffle con Chocolate",
-    descripcion: "Salsa de chocolate belga, nueces caramelizadas y helado de vainilla.",
+    descripcion: "Bañado de salsa de chocolate artesanal y Chispas de Chocolate con mantequilla y sirope de maple.",
     precio:      7.50,
-    imagen:      ".\Kathys Waffle\images\Waffle con Chocolate.jpeg",
-	//C:\xampp\htdocs\Kathys Waffle\images\Waffle con Chocolate.jpeg
+    imagen:      "./images/Waffle con Chocolate.jpeg",
     destacado:   false,
     disponible:  true
   },
   {
-    id:          4,
+    id:          4, 
     categoria:   "Waffles",
     nombre:      "Waffle con Arandanos",
     descripcion: "Queso cheddar derretido, jamón ahumado y huevo revuelto.",
@@ -220,10 +219,170 @@ const PRODUCTOS = [
   // ─────────────────────────────
   //  CATEGORÍA: Omelets
   // ─────────────────────────────
+  {
+    id:          18,
+    categoria:   "Omelets",
+    nombre:      "Omelet con Champiñones y Queso, Papas Caseras, Tostada.",
+    descripcion: "Esponjoso y dorado con mantequilla fresca y miel de maple artesanal.",
+    precio:      5.50,
+    imagen:      "https://images.unsplash.com/photo-1562376552-0d160a2f238d?w=600&q=80",
+    destacado:   true,
+    disponible:  true
+  },
+  {
+    id:          19,
+    categoria:   "Omelets",
+    nombre:      "Omelet con Champiñones, Cebolla, Tomate y Chiltoma, Papas Caseras, Tostada.",
+    descripcion: "Esponjoso y dorado con mantequilla fresca y miel de maple artesanal.",
+    precio:      5.50,
+    imagen:      "https://images.unsplash.com/photo-1562376552-0d160a2f238d?w=600&q=80",
+    destacado:   true,
+    disponible:  true
+  },
+  {
+    id:          20,
+    categoria:   "Omelets",
+    nombre:      "Omelet con Queso, Papas Caseras, Tostada.",
+    descripcion: "Esponjoso y dorado con mantequilla fresca y miel de maple artesanal.",
+    precio:      5.50,
+    imagen:      "https://images.unsplash.com/photo-1562376552-0d160a2f238d?w=600&q=80",
+    destacado:   true,
+    disponible:  true
+  },
+  {
+    id:          21,
+    categoria:   "Omelets",
+    nombre:      "Omelet con Tocino y Queso, Papas Caseras, Tostada.",
+    descripcion: "Esponjoso y dorado con mantequilla fresca y miel de maple artesanal.",
+    precio:      5.50,
+    imagen:      "https://images.unsplash.com/photo-1562376552-0d160a2f238d?w=600&q=80",
+    destacado:   true,
+    disponible:  true
+  },
+  {
+    id:          22,
+    categoria:   "Omelets",
+    nombre:      "Omelet con jamón y Queso, Papas Caseras, Tostada.",
+    descripcion: "Esponjoso y dorado con mantequilla fresca y miel de maple artesanal.",
+    precio:      5.50,
+    imagen:      "https://images.unsplash.com/photo-1562376552-0d160a2f238d?w=600&q=80",
+    destacado:   true,
+    disponible:  true
+  },
+  {
+    id:          23,
+    categoria:   "Omelets",
+    nombre:      "Omelet western con jamón y Queso, Tomate, Cebolla, Chiltoma, Papas Caseras, Tostada.",
+    descripcion: "Esponjoso y dorado con mantequilla fresca y miel de maple artesanal.",
+    precio:      5.50,
+    imagen:      "https://images.unsplash.com/photo-1562376552-0d160a2f238d?w=600&q=80",
+    destacado:   true,
+    disponible:  true
+  },
   
   // ─────────────────────────────
   //  CATEGORÍA: Huevos
   // ─────────────────────────────
+  {
+    id:          24,
+    categoria:   "Huevos",
+    nombre:      "3 Huevos, Tocino, Papas Caseras, y Tostada.",
+    descripcion: "Esponjoso y dorado con mantequilla fresca y miel de maple artesanal.",
+    precio:      5.50,
+    imagen:      "https://images.unsplash.com/photo-1562376552-0d160a2f238d?w=600&q=80",
+    destacado:   true,
+    disponible:  true
+  },
+  {
+    id:          25,
+    categoria:   "Huevos",
+    nombre:      "2 Huevos, Tocino, Papas Caseras, y Tostada.",
+    descripcion: "Esponjoso y dorado con mantequilla fresca y miel de maple artesanal.",
+    precio:      5.50,
+    imagen:      "https://images.unsplash.com/photo-1562376552-0d160a2f238d?w=600&q=80",
+    destacado:   true,
+    disponible:  true
+  },
+  {
+    id:          26,
+    categoria:   "Huevos",
+    nombre:      "2 Huevos, Tocino, Gallo Pinto, y Tostada.",
+    descripcion: "Esponjoso y dorado con mantequilla fresca y miel de maple artesanal.",
+    precio:      5.50,
+    imagen:      "https://images.unsplash.com/photo-1562376552-0d160a2f238d?w=600&q=80",
+    destacado:   true,
+    disponible:  true
+  },.
+  {
+    id:          27,
+    categoria:   "Huevos",
+    nombre:      "2 Huevos, Tocino, Papas Caseras, y Tostada.",
+    descripcion: "Esponjoso y dorado con mantequilla fresca y miel de maple artesanal.",
+    precio:      5.50,
+    imagen:      "https://images.unsplash.com/photo-1562376552-0d160a2f238d?w=600&q=80",
+    destacado:   true,
+    disponible:  true
+  },
+  {
+    id:          28,
+    categoria:   "Huevos",
+    nombre:      "2 Huevos, Gallo Pinto, y Tostada.",
+    descripcion: "Esponjoso y dorado con mantequilla fresca y miel de maple artesanal.",
+    precio:      5.50,
+    imagen:      "https://images.unsplash.com/photo-1562376552-0d160a2f238d?w=600&q=80",
+    destacado:   true,
+    disponible:  true
+  },
+  {
+    id:          29,
+    categoria:   "Huevos",
+    nombre:      "2 Huevos Revueltos con jamón y Queso Amarillo, Gallo Pinto y Tostada.",
+    descripcion: "Esponjoso y dorado con mantequilla fresca y miel de maple artesanal.",
+    precio:      5.50,
+    imagen:      "https://images.unsplash.com/photo-1562376552-0d160a2f238d?w=600&q=80",
+    destacado:   true,
+    disponible:  true
+  },
+  {
+    id:          30,
+    categoria:   "Huevos",
+    nombre:      "2 Huevos Rancheros (Salsa Picante), Papas Caseras o Gallo Pinto y Tostada.",
+    descripcion: "Esponjoso y dorado con mantequilla fresca y miel de maple artesanal.",
+    precio:      5.50,
+    imagen:      "https://images.unsplash.com/photo-1562376552-0d160a2f238d?w=600&q=80",
+    destacado:   true,
+    disponible:  true
+  },
+  {
+    id:          31,
+    categoria:   "Huevos",
+    nombre:      "2 Huevos y Tostada.",
+    descripcion: "Esponjoso y dorado con mantequilla fresca y miel de maple artesanal.",
+    precio:      5.50,
+    imagen:      "https://images.unsplash.com/photo-1562376552-0d160a2f238d?w=600&q=80",
+    destacado:   true,
+    disponible:  true
+  },
+  {
+    id:          32,
+    categoria:   "Huevos",
+    nombre:      "2 Huevos, Gallo Pinto, Maduro y Queso Frito.",
+    descripcion: "Esponjoso y dorado con mantequilla fresca y miel de maple artesanal.",
+    precio:      5.50,
+    imagen:      "https://images.unsplash.com/photo-1562376552-0d160a2f238d?w=600&q=80",
+    destacado:   true,
+    disponible:  true
+  },
+  {
+    id:          33,
+    categoria:   "Huevos",
+    nombre:      "3 Huevos Revueltos con Cebolla Caramelizadas, Papas Caseras, Tocino y Tostada.",
+    descripcion: "Esponjoso y dorado con mantequilla fresca y miel de maple artesanal.",
+    precio:      5.50,
+    imagen:      "https://images.unsplash.com/photo-1562376552-0d160a2f238d?w=600&q=80",
+    destacado:   true,
+    disponible:  true
+  },
   
   // ─────────────────────────────
   //  CATEGORÍA: Bagels
@@ -250,7 +409,7 @@ const PRODUCTOS = [
   // ─────────────────────────────
   
   // ─────────────────────────────
-  //  CATEGORÍA: Platos Fuertes
+  //  CATEGORÍA: latos Fuertes
   // ─────────────────────────────
   
   // ─────────────────────────────
@@ -312,26 +471,7 @@ const PRODUCTOS = [
   // ─────────────────────────────
   //  CATEGORÍA: Combos
   // ─────────────────────────────
-  {
-    id:          10,
-    categoria:   "Combos",
-    nombre:      "Combo Pareja",
-    descripcion: "2 waffles a elección + 2 bebidas. Perfecto para compartir.",
-    precio:      14.00,
-    imagen:      "https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=600&q=80",
-    destacado:   true,
-    disponible:  true
-  },
-  {
-    id:          11,
-    categoria:   "Combos",
-    nombre:      "Combo Familia",
-    descripcion: "4 waffles clásicos + 4 bebidas a elección. ¡Ideal para todos!",
-    precio:      24.00,
-    imagen:      "https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=600&q=80",
-    destacado:   true,
-    disponible:  true
-  }
+
 
   // ─────────────────────────────
   //  ✏️  AGREGA TUS PRODUCTOS AQUÍ
