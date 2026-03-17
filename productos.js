@@ -312,7 +312,7 @@ const PRODUCTOS = [
     imagen:      "https://images.unsplash.com/photo-1562376552-0d160a2f238d?w=600&q=80",
     destacado:   true,
     disponible:  true
-  },.
+  },
   {
     id:          27,
     categoria:   "Huevos",
