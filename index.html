@@ -672,48 +672,94 @@ let carrito = JSON.parse(localStorage.getItem('kwh_carrito') || '[]');
    RENDER MENÚ
 ══════════════════════════════════════════ */
 function renderMenu() {
-  const cats = [...new Set(PRODUCTOS.filter(p => p.disponible !== false).map(p => p.categoria))];
-  const tabsEl = document.getElementById('cat-tabs');
-  const menuEl = document.getElementById('menu-sections');
+  try {
+    const todos = PRODUCTOS.filter(p => p.disponible !== false);
+    const cats  = [...new Set(todos.map(p => p.categoria))];
+    const tabsEl = document.getElementById('cat-tabs');
+    const menuEl = document.getElementById('menu-sections');
 
-  // Tab "Todo"
-  tabsEl.innerHTML = `<button class="cat-btn active" onclick="filtrar('all',this)">🍽️ Todo</button>`;
-  cats.forEach(c => {
-    tabsEl.innerHTML += `<button class="cat-btn" onclick="filtrar('${c}',this)">${c}</button>`;
-  });
+    // ── Tabs: uso data-cat en lugar de string en onclick
+    tabsEl.innerHTML = `<button class="cat-btn active" data-cat="all">🍽️ Todo</button>`;
+    cats.forEach(c => {
+      const btn = document.createElement('button');
+      btn.className  = 'cat-btn';
+      btn.dataset.cat = c;
+      btn.textContent = c;
+      tabsEl.appendChild(btn);
+    });
+    // Evento delegado: un solo listener en el contenedor
+    tabsEl.onclick = e => {
+      const btn = e.target.closest('.cat-btn');
+      if (!btn) return;
+      filtrar(btn.dataset.cat, btn);
+    };
 
-  // Secciones
-  menuEl.innerHTML = '';
-  cats.forEach((cat, ci) => {
-    const prods = PRODUCTOS.filter(p => p.categoria === cat && p.disponible !== false);
-    const html = `
-      <div class="section" data-cat="${cat}">
+    // ── Secciones
+    menuEl.innerHTML = '';
+    cats.forEach((cat, ci) => {
+      const prods = todos.filter(p => p.categoria === cat);
+      if (!prods.length) return;
+
+      const sec = document.createElement('div');
+      sec.className   = 'section';
+      sec.dataset.cat = cat;
+      sec.innerHTML   = `
         <div class="section-header">
-          <h2>${cat}</h2>
+          <h2>${escHtml(cat)}</h2>
           <div class="section-line"></div>
         </div>
         <div class="grid">
           ${prods.map((p, pi) => `
-            <div class="card" style="animation-delay:${(ci*0.05 + pi*0.07)}s">
+            <div class="card" style="animation-delay:${(ci*0.05+pi*0.07).toFixed(2)}s">
               <div class="card-img-wrap">
-                <img src="${p.imagen}" alt="${p.nombre}" loading="lazy"/>
+                <img src="${escHtml(p.imagen || '')}" alt="${escHtml(p.nombre || '')}" loading="lazy"
+                     onerror="this.src='https://placehold.co/600x400/F2E6C8/8A7260?text=Sin+imagen'"/>
                 ${p.destacado ? '<span class="badge-star">⭐ Destacado</span>' : ''}
               </div>
               <div class="card-body">
-                <h3 class="card-name">${p.nombre}</h3>
-                <p class="card-desc">${p.descripcion}</p>
+                <h3 class="card-name">${escHtml(p.nombre || 'Producto')}</h3>
+                <p class="card-desc">${escHtml(p.descripcion || '')}</p>
                 <div class="card-foot">
-                  <span class="card-price">${CONFIG.moneda}${p.precio.toFixed(2)}</span>
-                  <button class="btn-add" onclick="agregarAlCarrito(${p.id})" aria-label="Agregar ${p.nombre}">+</button>
+                  <span class="card-price">${CONFIG.moneda}${(+p.precio || 0).toFixed(2)}</span>
+                  <button class="btn-add" data-id="${p.id}" aria-label="Agregar ${escHtml(p.nombre || '')}">+</button>
                 </div>
               </div>
             </div>`).join('')}
-        </div>
-      </div>`;
-    menuEl.innerHTML += html;
-  });
+        </div>`;
 
-  renderHistorial();
+      // Delegar clicks del botón + dentro de cada sección
+      sec.addEventListener('click', e => {
+        const btn = e.target.closest('.btn-add');
+        if (btn) agregarAlCarrito(+btn.dataset.id);
+      });
+
+      menuEl.appendChild(sec);
+    });
+
+    renderHistorial();
+
+  } catch(err) {
+    console.error('Error al cargar el menú:', err);
+    document.getElementById('menu-sections').innerHTML =
+      `<div style="padding:40px;text-align:center;color:#C4621A;">
+        <p style="font-size:1.1rem;font-weight:700;">⚠️ Error al cargar el menú</p>
+        <p style="margin-top:8px;color:#8A7260;font-size:.9rem;">
+          Revisa <strong>productos.js</strong> — puede haber una coma faltante o un campo mal escrito.<br>
+          Abre la consola del navegador (F12) para ver el detalle.
+        </p>
+        <pre style="margin-top:12px;background:#fff8ed;padding:12px;border-radius:8px;font-size:.8rem;text-align:left;overflow:auto;">${err.message}</pre>
+      </div>`;
+  }
+}
+
+// Escapa caracteres HTML para evitar que comillas o < rompan el HTML
+function escHtml(str) {
+  return String(str)
+    .replace(/&/g,'&amp;')
+    .replace(/"/g,'&quot;')
+    .replace(/'/g,'&#39;')
+    .replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;');
 }
 
 /* ══════════════════════════════════════════
@@ -721,7 +767,7 @@ function renderMenu() {
 ══════════════════════════════════════════ */
 function filtrar(cat, btn) {
   document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
+  if (btn) btn.classList.add('active');
   document.querySelectorAll('.section[data-cat]').forEach(sec => {
     sec.style.display = (cat === 'all' || sec.dataset.cat === cat) ? '' : 'none';
   });
