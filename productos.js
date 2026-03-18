@@ -39,7 +39,7 @@ const PRODUCTOS = [
     nombre:      "#1 Waffle Clásico",
     descripcion: "Esponjoso y dorado con mantequilla fresca y sirope de maple.",
     precio:      5.50,
-    imagen:      "https://images.unsplash.com/photo-1562376552-0d160a2f238d?w=600&q=80",
+    imagen:      "https://ik.imagekit.io/mnw1ere56/images/Waffle%20_1.jpeg",
     destacado:   true,
     disponible:  true
   },
@@ -49,7 +49,7 @@ const PRODUCTOS = [
     nombre:      "#2 Waffles con Nueces o Almendras",
     descripcion: "Cobertura de fresas frescas, crema chantilly y azúcar glass.",
     precio:      7.00,
-    imagen:      "https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=600&q=80",
+    imagen:      "https://ik.imagekit.io/mnw1ere56/images/Waffle%20_1.jpeg",
     destacado:   true,
     disponible:  true
   },
@@ -59,7 +59,7 @@ const PRODUCTOS = [
     nombre:      "#3 Waffle con Chocolate",
     descripcion: "Bañado de salsa de chocolate artesanal y Chispas de Chocolate con mantequilla y sirope de maple.",
     precio:      7.50,
-    imagen:      "./images/Waffle con Chocolate.jpeg",
+    imagen:      "https://ik.imagekit.io/mnw1ere56/images/Waffle%20con%20Chocolate.jpeg",
     destacado:   false,
     disponible:  true
   },
@@ -69,7 +69,7 @@ const PRODUCTOS = [
     nombre:      "#4 Waffle con Arandanos",
     descripcion: "Queso cheddar derretido, jamón ahumado y huevo revuelto.",
     precio:      8.00,
-    imagen:      "https://images.unsplash.com/photo-1506084868230-bb9d95c24759?w=600&q=80",
+    imagen:      "https://ik.imagekit.io/mnw1ere56/images/Waffle%20con%20arandanos.jpeg",
     destacado:   false,
     disponible:  true
   },
@@ -177,7 +177,7 @@ const PRODUCTOS = [
     nombre:      "#14 Tostadas Francesas",
     descripcion: "Esponjoso y dorado con mantequilla fresca y miel de maple artesanal.",
     precio:      5.50,
-    imagen:      "https://images.unsplash.com/photo-1562376552-0d160a2f238d?w=600&q=80",
+    imagen:      "https://ik.imagekit.io/mnw1ere56/images/Tostadas%20Francesas.jpeg",
     destacado:   true,
     disponible:  true
   },
@@ -225,7 +225,7 @@ const PRODUCTOS = [
     nombre:      "#18 Omelet con Champiñones y Queso, Papas Caseras, Tostada.",
     descripcion: "Esponjoso y dorado con mantequilla fresca y miel de maple artesanal.",
     precio:      5.50,
-    imagen:      "https://images.unsplash.com/photo-1562376552-0d160a2f238d?w=600&q=80",
+    imagen:      "https://ik.imagekit.io/mnw1ere56/images/Omelete%20_18.jpeg",
     destacado:   true,
     disponible:  true
   },
@@ -245,7 +245,7 @@ const PRODUCTOS = [
     nombre:      "#20 Omelet con Queso, Papas Caseras, Tostada.",
     descripcion: "Esponjoso y dorado con mantequilla fresca y miel de maple artesanal.",
     precio:      5.50,
-    imagen:      "https://images.unsplash.com/photo-1562376552-0d160a2f238d?w=600&q=80",
+    imagen:      "https://ik.imagekit.io/mnw1ere56/images/Omelet%20_20.jpeg",
     destacado:   true,
     disponible:  true
   },
@@ -255,7 +255,7 @@ const PRODUCTOS = [
     nombre:      "#21 Omelet con Tocino y Queso, Papas Caseras, Tostada.",
     descripcion: "Esponjoso y dorado con mantequilla fresca y miel de maple artesanal.",
     precio:      5.50,
-    imagen:      "https://images.unsplash.com/photo-1562376552-0d160a2f238d?w=600&q=80",
+    imagen:      "https://ik.imagekit.io/mnw1ere56/images/Omelet%20_22.jpeg",
     destacado:   true,
     disponible:  true
   },
@@ -265,7 +265,7 @@ const PRODUCTOS = [
     nombre:      "#22 Omelet con jamón y Queso, Papas Caseras, Tostada.",
     descripcion: "Esponjoso y dorado con mantequilla fresca y miel de maple artesanal.",
     precio:      5.50,
-    imagen:      "https://images.unsplash.com/photo-1562376552-0d160a2f238d?w=600&q=80",
+    imagen:      "https://ik.imagekit.io/mnw1ere56/images/Omelet%20_22.jpeg",
     destacado:   true,
     disponible:  true
   },
@@ -275,7 +275,7 @@ const PRODUCTOS = [
     nombre:      "#23 Omelet western con jamón y Queso, Tomate, Cebolla, Chiltoma, Papas Caseras, Tostada.",
     descripcion: "Esponjoso y dorado con mantequilla fresca y miel de maple artesanal.",
     precio:      5.50,
-    imagen:      "https://images.unsplash.com/photo-1562376552-0d160a2f238d?w=600&q=80",
+    imagen:      "https://ik.imagekit.io/mnw1ere56/images/Omelet%20_23.jpeg",
     destacado:   true,
     disponible:  true
   },
